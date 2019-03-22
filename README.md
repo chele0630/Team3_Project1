@@ -27,17 +27,17 @@ Data sets used throught the project
 ## coding style
 
 Jupyter notebooks will be used
-'''
-import matplotlib.pyplot as plt
-import pandas as pd
-import numpy as np
-import requests
-import time
-import pprint
-from citipy import citipy
-import gmaps
-import gmaps.datasets
-'''
+
+* import matplotlib.pyplot as plt
+* import pandas as pd
+* import numpy as np
+* import requests
+* import time
+* import pprint
+* from citipy import citipy
+* import gmaps
+* import gmaps.datasets
+
 ## API Calls
 
 [City of Las Angels](https://data.lacity.org/resource/8yfh-4gug.json)

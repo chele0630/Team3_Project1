@@ -28,7 +28,7 @@ Data sets used throught the project
 
 Jupyter notebooks will be used. 
 
-List of dependencies
+List of dependencies:
 ```sh
    import matplotlib.pyplot as plt
    import pandas as pd
@@ -60,7 +60,7 @@ Sujita Kapali - Inital Work - [SMU DataTeam 3](https://github.com/SujiKap)
 Sisay Teketele - Inital Wark - [SMU DataTeam 3](https://github.com/sisayyt)
 
 # Acknowledgments
-
+Giving credit to those who helped
 ```sh
 Hat tip to anyone whose code was used
 Inspiration

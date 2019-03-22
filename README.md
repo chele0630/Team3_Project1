@@ -1,5 +1,16 @@
 [![INSERT YOUR GRAPHIC HERE](https://ladot.lacity.org/sites/g/files/wph266/f/styles/banner/public/lacityp_027861_0.jpg?itok=j4htAmA6)]()
 
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [Team 3 Project 1](#team-3-project-1)
+* [Purpose of the Analysis](#purpose-of-the-analysis)
+* [Key Documents](#key-documents)
+* [Coding Style](#coding-style)
+* [API Calls](#api-calls)
+* [Coding Documentation](#coding-documentation)
+* [Authors](#authors)
+* [Acknowledgments](#acknowledgments)
 
 # Team 3 Project 1
 
@@ -27,7 +38,7 @@ Data sets used throught the project
 * and APi call from citipy is used
 * an API call to Google places is used
 
-### coding style
+### Coding Style
 
 Jupyter notebooks will be used. 
 

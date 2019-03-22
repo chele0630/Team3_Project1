@@ -29,17 +29,17 @@ Data sets used throught the project
 Jupyter notebooks will be used. 
 
 List of dependencies
-
-   * import matplotlib.pyplot as plt
-   * import pandas as pd
-   * import numpy as np
-   * import requests
-   * import time
-   * import pprint
-   * from citipy import citipy
-   * import gmaps
-   * import gmaps.datasets
-
+```sh
+   import matplotlib.pyplot as plt
+   import pandas as pd
+   import numpy as np
+   import requests
+   import time
+   import pprint
+   from citipy import citipy
+   import gmaps
+   import gmaps.datasets
+```
 ## API Calls
 
 [City of Las Angels](https://data.lacity.org/resource/8yfh-4gug.json)
@@ -61,6 +61,8 @@ Sisay Teketele - Inital Wark - [SMU DataTeam 3](https://github.com/sisayyt)
 
 # Acknowledgments
 
+```sh
 Hat tip to anyone whose code was used
 Inspiration
 etc
+```

@@ -58,12 +58,12 @@ List of dependencies:
 
 [City of Las Angels](https://data.lacity.org/resource/8yfh-4gug.json)
 
-[Google API](https://developers.google.com/places/web-service/search)
-
 ### Coding Documentation
 [gmaps](https://jupyter-gmaps.readthedocs.io/en/latest/tutorial.html)
 
 [Citipy](https://github.com/wingchen/citipy)
+
+[Google API](https://developers.google.com/places/web-service/search)
 
 ## Authors
 

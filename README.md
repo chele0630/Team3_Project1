@@ -26,17 +26,19 @@ Data sets used throught the project
 
 ## coding style
 
-Jupyter notebooks will be used
+Jupyter notebooks will be used. 
 
-* import matplotlib.pyplot as plt
-* import pandas as pd
-* import numpy as np
-* import requests
-* import time
-* import pprint
-* from citipy import citipy
-* import gmaps
-* import gmaps.datasets
+List of dependencies
+
+   * import matplotlib.pyplot as plt
+   * import pandas as pd
+   * import numpy as np
+   * import requests
+   * import time
+   * import pprint
+   * from citipy import citipy
+   * import gmaps
+   * import gmaps.datasets
 
 ## API Calls
 
@@ -51,11 +53,11 @@ Jupyter notebooks will be used
 
 # Authors
 
-Ka-Ri Walker - Initial work - [SMU DataTeam](https://github.com/ButtonWalker)
+Ka-Ri Walker - Initial work - [SMU DataTeam 3](https://github.com/ButtonWalker)
 
-Sujita Kapali - Inital Work - [SMU DataTeam](https://github.com/SujiKap)
+Sujita Kapali - Inital Work - [SMU DataTeam 3](https://github.com/SujiKap)
 
-Sisay Teketele - Inital Wark - [SMU DataTeam](https://github.com/sisayyt)
+Sisay Teketele - Inital Wark - [SMU DataTeam 3](https://github.com/sisayyt)
 
 # Acknowledgments
 

@@ -66,6 +66,8 @@ List of dependencies:
 
 [Google API](https://developers.google.com/places/web-service/search)
 
+[Folium Mapping](https://python-visualization.github.io/folium/)
+
 ## Authors
 
 Ka-Ri Walker - Initial work - [SMU DataTeam 3](https://github.com/ButtonWalker)

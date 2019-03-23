@@ -53,6 +53,7 @@ List of dependencies:
    from citipy import citipy
    import gmaps
    import gmaps.datasets
+   import scipy.stats as stats
 ```
 ### API Calls
 
@@ -64,6 +65,8 @@ List of dependencies:
 [Citipy](https://github.com/wingchen/citipy)
 
 [Google API](https://developers.google.com/places/web-service/search)
+
+[Folium Mapping](https://python-visualization.github.io/folium/)
 
 ## Authors
 

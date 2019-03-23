@@ -53,6 +53,7 @@ List of dependencies:
    from citipy import citipy
    import gmaps
    import gmaps.datasets
+   import scipy.stats as stats
 ```
 ### API Calls
 

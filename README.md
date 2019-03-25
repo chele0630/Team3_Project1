@@ -77,10 +77,10 @@ Sisay Teketele - Inital Wark - [SMU DataTeam 3](https://github.com/sisayyt)
 
 ## Git Version Workflow
 
-[![GIT Workflow](https://1drv.ms/u/s!Ama2FXUeXhwwgvU3TrYR8LNRYtGBbQ)]()
+[![GIT Workflow](https://github.com/ButtonWalker/Team3_Project1/blob/master/GitWorkFlow.png)]()
 ```sh
 Name Features (featureKW01)
-Name Bugs (BugKW01) feature number and bug number same
+Name Bugs (BugKW01) feature number and bug number to match
 ```
 ## Acknowledgments
 Giving credit to those who helped

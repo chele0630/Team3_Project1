@@ -20,8 +20,8 @@ Team 3 project is done to uncover patterns in parking activity around the Las An
 
 We have two main purposes of the analysis:
 
-* The first purpose is to examine if a relatioship exists between vehicle make and parking citations.
-* The second purpose is to examine if a relatioship exists beteen vehicle color andd parking citations.
+* The first purpose is to examine if a relationship exists between vehicle make and parking citations.
+* The second purpose is to examine if a relationship exists beteen vehicle color andd parking citations.
 * The team will examine and plot citation locations to evaluate a possible correlation between parking citations adn the surrounding area
     * Dining
     * Housing

@@ -75,6 +75,13 @@ Sujita Kapali - Inital Work - [SMU DataTeam 3](https://github.com/SujiKap)
 
 Sisay Teketele - Inital Wark - [SMU DataTeam 3](https://github.com/sisayyt)
 
+## Git Version Workflow
+
+[![GIT Workflow](https://1drv.ms/u/s!Ama2FXUeXhwwgvU3TrYR8LNRYtGBbQ)]()
+```sh
+Name Features (featureKW01)
+Name Bugs (BugKW01) feature number and bug number same
+```
 ## Acknowledgments
 Giving credit to those who helped
 ```sh

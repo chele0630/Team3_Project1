@@ -27,6 +27,14 @@ We have two main purposes of the analysis:
     * Housing
     * Bar
     * Night club
+ 
+### Hypothesis Validation
+* Purpose One
+   * Null hypothesis: there is no significant relationship between the make of cars and the number of citations. 
+   * Alternate hypothesis: there is a significant relationship between the make of cars and the number of citations.
+* Purpose Two
+   * Null Hypotheses: there is no a significant relationship between color of the car and the number of parking citations.
+   * Alternate hypothesis: there is a significant relationship between color of the car and the number of parking citations. 
 
 ### Key Documents
 

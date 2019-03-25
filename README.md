@@ -14,16 +14,15 @@
 
 # Team 3 Project 1
 
-Team 3 project is done to uncover patterns in parking activity around the Las Angeles area. We will examine realtionships between vehicle makes and parking citations, vehicle model and parking citation, and vehicle color and parking citations.
+Team 3 project is done to uncover patterns in parking activity around the Las Angeles area. We will examine realtionships between vehicle makes and parking citations, and vehicle color and parking citations.
 
 ### Purpose of the Analysis
 
-we have three man purposes for the analysis
+We have two main purposes of the analysis:
 
-* The first purpose is to examine if a relatioship exists between vehicle make and parking citations
-* The second purpose is to examine if a relatioship exists between vehicle model and parking citations
-* The third purpose is to examine if a relatioship exists beteen vehicle color andd parking citations
-* The team will examine and plot citation locations to evaluate a possible corilation with the sourding area
+* The first purpose is to examine if a relatioship exists between vehicle make and parking citations.
+* The second purpose is to examine if a relatioship exists beteen vehicle color andd parking citations.
+* The team will examine and plot citation locations to evaluate a possible correlation between parking citations adn the surrounding area
     * Dining
     * Housing
     * Bar
@@ -31,12 +30,12 @@ we have three man purposes for the analysis
 
 ### Key Documents
 
-Data sets used throught the project
+The following data sets used throughout the project.
 
-* a dataset was downloaded from the City of Los Angeles for the months of May through July 2018 in csv format
+* a dataset was downloaded from the City of Los Angeles for the months of May through July 2018 in csv format.
 * a dataset was downloaded from the California DMV in csv format.
-* and APi call from citipy is used
-* an API call to Google places is used
+* and API call from citipy is used.
+* an API call to Google places is used.
 
 ### Coding Style
 

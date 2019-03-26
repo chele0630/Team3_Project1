@@ -1,0 +1,7 @@
+
+03/25
+
+Delete violoations and fine amount and body style
+Drop lat and lon with 9999
+Removve dups and rename and only take the ones more than 100
+on colors remove anything less than 100

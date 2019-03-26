@@ -6,7 +6,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.3'
-#       jupytext_version: 1.0.5
+#       jupytext_version: 1.0.4
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -77,13 +77,9 @@ citation_df4.info()
 
 citation_df4["Make"].unique()
 
-# +
 #Check the total counts in each category
 citation_df4["Make"].value_counts()
 #citation_df3["Color"].value_counts()
-
-
-# -
 
 Sample_data = citation_df4.sample(frac=0.10, random_state = 1 )
 

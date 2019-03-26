@@ -6,25 +6,16 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.3'
-<<<<<<< HEAD
 #       jupytext_version: 1.0.5
-=======
-#       jupytext_version: 1.0.4
->>>>>>> 5641e3ddf060da48377e3380dabe54e84a915765
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
 #     name: python3
 # ---
 
-<<<<<<< HEAD
 # +
 #Add Dependencies
 
-=======
-#Add Dependencies
-# %autosave 0
->>>>>>> 5641e3ddf060da48377e3380dabe54e84a915765
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -36,10 +27,7 @@ import gmaps
 import gmaps.datasets
 import scipy.stats as stats
 #import folium
-<<<<<<< HEAD
 # -
-=======
->>>>>>> 5641e3ddf060da48377e3380dabe54e84a915765
 
 # ## Importing CSV Data
 #
@@ -68,7 +56,6 @@ citation_df2.head()
 
 citation_df2.count()
 
-<<<<<<< HEAD
 #Take all rows where column values are not equal to zero
 citation_df3 = citation_df2[(citation_df2[["Ticket number", "Issue Date","Issue time","Make","Color","Latitude","Longitude",]] != 0)]
 citation_df3.head()
@@ -93,22 +80,15 @@ citation_df4["Make"].unique()
 # +
 #Check the total counts in each category
 citation_df4["Make"].value_counts()
-=======
-# +
-#Take all rows where column values are not equal to zero
-citation_df3 = citation_df2[(citation_df2[["Ticket number", "Issue Date","Issue time","Make","Color","Latitude","Longitude",]] != 0)]
-
-#Drop all rows with blank cells
-citation_df4 = citation_df3.fillna("")
-citation_df4.count()
-
-# +
-#Check the total counts in each category
-citation_df3["Make"].value_counts()
->>>>>>> 5641e3ddf060da48377e3380dabe54e84a915765
 #citation_df3["Color"].value_counts()
 
 
 # -
+
+Sample_data = citation_df4.sample(frac=0.10, random_state = 1 )
+
+Sample_data.head()
+
+Sample_data.info()
 
 

@@ -73,9 +73,9 @@ docs/_build/
 target/
 
 # Jupyter Notebook
-.ipynb_checkpoints
-.Rmd
-.ipynb
+*.ipynb_checkpoints
+*.Rmd
+*.ipynb
 
 # IPython
 profile_default/

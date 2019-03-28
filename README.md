@@ -62,6 +62,10 @@ List of dependencies:
    import gmaps
    import gmaps.datasets
    import scipy.stats as stats
+   from datetime import datetime
+   import folium
+   from folium.plugins import fast_marker_cluster as fmc
+   import pyproj
 ```
 ### API Calls
 

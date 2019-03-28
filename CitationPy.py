@@ -13,9 +13,8 @@
 #     name: python3
 # ---
 
-# +
 #Add Dependencies
-
+# %matplotlib inline
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
@@ -28,7 +27,6 @@ import gmaps.datasets
 import scipy.stats as stats
 from datetime import datetime
 #import folium
-# -
 
 # ## Importing CSV Data
 #
@@ -92,31 +90,42 @@ citation_df6 = citation_df5.rename_axis('Make').reset_index(name='counts')
 citation_df7 = citation_df6.head(25)
 
 
+citation_df7.head()
+
 #Bar plot for top 25 make of vehicles that got citations
+fig = plt.gcf()
+fig.set_size_inches(18.5, 10.5)
 x_axis=np.arange(len(citation_df7["Make"]))
-plt.bar(x_axis,citation_df7["counts"] )
-plt.xlabel('Make', fontsize=5)
-plt.ylabel('counts', fontsize=5)
-plt.xticks(x_axis, citation_df6["Make"], fontsize=5, rotation=30)
-plt.title('Top 20 citations by Make of cars')
+plt.bar(x_axis,citation_df7["counts"], color="blue" )
+plt.xlabel('Make', fontsize=18)
+plt.ylabel('Counts', fontsize=18)
+plt.xticks(x_axis, citation_df7["Make"], fontsize=12, rotation=90,)
+plt.title('Top 25 Citations by Make of Cars', fontsize=25)
+fig.savefig("make_chart.png")
 plt.show()
+plt.clf()
 
 #Replace duplicates for all makes in top 30
 citation_df8 = citation_df4["Color"].value_counts()
 citation_df9 = citation_df8.rename_axis('Color').reset_index(name='Counts')
-citation_df10 = citation_df9.head(25)
+citation_df10 = citation_df9.head(10)
 
 
 #Bar plot for top 25 Color of vehicles that got citations
+fig = plt.gcf()
+fig.set_size_inches(18.5, 10.5)
 x_axis=np.arange(len(citation_df10["Color"]))
-plt.bar(x_axis,citation_df10["Counts"] )
-plt.xlabel('Color', fontsize=5)
-plt.ylabel('Counts', fontsize=5)
-plt.xticks(x_axis, citation_df10["Color"], fontsize=5, rotation=30)
-plt.title('Top 25 citations by color of cars')
+plt.bar(x_axis,citation_df10["Counts"], color=('wheat','black',"grey","silver","blue","red","green","brown","maroon","gold","red","tan"))
+plt.xlabel('Color', fontsize=18)
+plt.ylabel('Counts', fontsize=18)
+plt.xticks(x_axis, citation_df10["Color"], fontsize=18, rotation=30)
+plt.title('Top 10 Citations by Color of Cars', fontsize=20)
+#plt.figure(figsize=(18,16))
+fig.savefig("color_chart.png")
 plt.show()
+plt.clf()
 
-
+plt.clf()
 
 # Sampling the models of four cars 
 df1 = Sample_data[Sample_data.Make.isin(["BMW","FORD","VOLK","DODG"])]

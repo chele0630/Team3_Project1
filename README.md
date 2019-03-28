@@ -1,5 +1,5 @@
 [![INSERT YOUR GRAPHIC HERE](https://ladot.lacity.org/sites/g/files/wph266/f/styles/banner/public/lacityp_027861_0.jpg?itok=j4htAmA6)]()
-[![INSERT YOUR GRAPHIC HERE](https://ladot.lacity.org/sites/g/files/wph266/f/styles/banner/public/lacityp_027861_0.jpg?itok=j4htAmA6)]()
+
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 

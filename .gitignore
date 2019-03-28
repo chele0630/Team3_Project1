@@ -75,7 +75,6 @@ target/
 # Jupyter Notebook
 *.ipynb_checkpoints
 *.Rmd
-*.ipynb
 
 # IPython
 profile_default/

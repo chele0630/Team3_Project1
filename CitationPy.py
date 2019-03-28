@@ -6,7 +6,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.3'
-#       jupytext_version: 1.0.4
+#       jupytext_version: 1.0.5
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -26,6 +26,7 @@ from citipy import citipy
 import gmaps
 import gmaps.datasets
 import scipy.stats as stats
+from datetime import datetime
 #import folium
 # -
 
@@ -36,10 +37,12 @@ import scipy.stats as stats
 #Import citation data from csv
 citation_raw = pd.read_csv("Parking_Citations.csv")
 citation_df = citation_raw
-citation_df.head()
 
+
+# +
 #Name of columns 
-citation_df.columns.tolist()
+#citation_df.columns.tolist()
+# -
 
 # ## Cleaning Columns from Dataset
 
@@ -65,26 +68,99 @@ citation_df3.head()
 citation_df4 = citation_df3.fillna("")
 
 
-citation_df4.count()
+# +
+#citation_df4.count()
+# -
 
 citation_df4["Make"].replace("", np.nan, inplace=True)
 citation_df4.dropna(subset = ["Make"], inplace = True)
 
-citation_df4.sort_values(["Make"],ascending=True)
+# +
+#Sort values by make of car
+#citation_df4.sort_values(["Make"],ascending=True)
+# -
 
-
-citation_df4.info()
-
-citation_df4["Make"].unique()
-
-#Check the total counts in each category
-citation_df4["Make"].value_counts()
-#citation_df3["Color"].value_counts()
 
 Sample_data = citation_df4.sample(frac=0.10, random_state = 1 )
 
 Sample_data.head()
 
-Sample_data.info()
+#Replace duplicates for all makes in top 30
+citation_df4["Make"] = citation_df4["Make"].replace({'TOYT': 'TOYOTA', 'TOYO': 'TOYOTA'})
+citation_df5 = citation_df4["Make"].value_counts()
+citation_df6 = citation_df5.rename_axis('Make').reset_index(name='counts')
+citation_df7 = citation_df6.head(25)
+
+
+#Bar plot for top 25 make of vehicles that got citations
+x_axis=np.arange(len(citation_df7["Make"]))
+plt.bar(x_axis,citation_df7["counts"] )
+plt.xlabel('Make', fontsize=5)
+plt.ylabel('counts', fontsize=5)
+plt.xticks(x_axis, citation_df6["Make"], fontsize=5, rotation=30)
+plt.title('Top 20 citations by Make of cars')
+plt.show()
+
+#Replace duplicates for all makes in top 30
+citation_df8 = citation_df4["Color"].value_counts()
+citation_df9 = citation_df8.rename_axis('Color').reset_index(name='Counts')
+citation_df10 = citation_df9.head(25)
+
+
+#Bar plot for top 25 Color of vehicles that got citations
+x_axis=np.arange(len(citation_df10["Color"]))
+plt.bar(x_axis,citation_df10["Counts"] )
+plt.xlabel('Color', fontsize=5)
+plt.ylabel('Counts', fontsize=5)
+plt.xticks(x_axis, citation_df10["Color"], fontsize=5, rotation=30)
+plt.title('Top 25 citations by color of cars')
+plt.show()
+
+
+
+# Sampling the models of four cars 
+df1 = Sample_data[Sample_data.Make.isin(["BMW","FORD","VOLK","DODG"])]
+df1.head()
+
+# Group by make of the cars
+df2 = df1.groupby("Make").Make.count()
+
+Sample_data_large = citation_df4.sample(frac=0.50, random_state = 1 )
+
+df3 = Sample_data_large[Sample_data_large.Make.isin(["BMW","FORD","VOLK","DODG"])]
+df3.info()
+
+df3 = df3.groupby("Make").Make.count()
+df3
+
+Observed = df2
+Observed
+
+Observed = pd.DataFrame(Observed)
+Observed
+
+Observed.columns.values[0]="Observed"
+Observed
+
+overall_ratio = (df3/len(df3)).round(0)
+overall_ratio
+
+Expected = overall_ratio * len(Observed)
+Expected
+
+Expected= pd.DataFrame(Expected)
+
+Expected.columns.values[0] = "Expected"
+Expected
+
+Combined =  pd.concat([Observed, Expected], axis = 1)
+Combined
+
+#With fur raws, the degree of freedom is 3
+# with a p-value of 0.05, the CL is 1-0.05 = 0.95
+Critcal_value = stats.chi2.ppf(q=0.95, df = 3)
+Critcal_value
+
+stats.chisquare(Combined["Observed"], Combined["Expected"])
 
 

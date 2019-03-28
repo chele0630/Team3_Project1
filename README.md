@@ -48,6 +48,10 @@ The following data sets used throughout the project.
 * Toyota tops the list of the make of vehicles that received the most citation at 74K followed by Honda at 47K and Ford at 35K. Nissan was fourth in the list at 31K and Chevy ranked no.5 at 27K. 
 * White colored vehicles received the most citations followed very closely by black and gray colored vehicle. Silver ranked at no.4 and blue ranked no. 5. 
 
+[![INSERT YOUR GRAPHIC HERE](https://github.com/ButtonWalker/Team3_Project1/blob/master/CitaLocationMap.png)]()
+
+[![INSERT YOUR GRAPHIC HERE](https://github.com/ButtonWalker/Team3_Project1/blob/master/CitaHeatMap.png)]()
+
 ### Coding Style
 
 Jupyter notebooks will be used. 

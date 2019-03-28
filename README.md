@@ -42,9 +42,11 @@ We have two main purposes of the analysis:
 The following data sets used throughout the project.
 
 * a dataset was downloaded from the City of Los Angeles for the months of May through July 2018 in csv format.
-* a dataset was downloaded from the California DMV in csv format.
-* and API call from citipy is used.
-* an API call to Google places is used.
+* Folium was used and various plug-ins were used to create interactive heat maps and location markers
+
+### Findings
+* Toyota tops the list of the make of vehicles that received the most citation at 74K followed by Honda at 47K and Ford at 35K. Nissan was fourth in the list at 31K and Chevy ranked no.5 at 27K. 
+* White colored vehicles received the most citations followed very closely by black and gray colored vehicle. Silver ranked at no.4 and blue ranked no. 5. 
 
 ### Coding Style
 

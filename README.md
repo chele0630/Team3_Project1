@@ -35,6 +35,7 @@ We have two main purposes of the analysis:
 * Purpose Two
    * Null Hypotheses: there is no a significant relationship between color of the car and the number of parking citations.
    * Alternate hypothesis: there is a significant relationship between color of the car and the number of parking citations. 
+* Since the chi-square value of 25599 at a confidance level of 95% exceeds the CV of 7.8114. We, therefore, conclude that there is a difference between the two groups is stastically significant. Also, the p-vale was zero indicates that the null phyptheses is false. We reject the null hypothesis.
 
 ### Key Documents
 

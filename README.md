@@ -66,9 +66,7 @@ List of dependencies:
    import numpy as np
    import requests
    import time
-   import pprint
    import scipy.stats as stats
-   from datetime import datetime
    import folium
    import folium.plugins as plugins
    from folium.plugins import MarkerCluster

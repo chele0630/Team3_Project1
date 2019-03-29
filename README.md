@@ -14,32 +14,32 @@
 
 # Team 3 Project 1
 
-Team 3 project is done to uncover patterns in parking activity around the Las Angeles area. We will examine realtionships between vehicle makes and parking citations, and vehicle color and parking citations.
+Team 3 project is done to uncover patterns in parking activity around the Los Angeles area. We will examine realtionships between vehicle makes and parking citations, and vehicle color and parking citations.
 
 ### Purpose of the Analysis
 
 We have two main purposes of the analysis:
 
 * The first purpose is to examine if a relationship exists between vehicle make and parking citations.
-* The second purpose is to examine if a relationship exists beteen vehicle color andd parking citations.
-* The team will examine and plot citation locations to evaluate a possible correlation between parking citations adn the surrounding area
+* The second purpose is to examine if a relationship exists between vehicle color andd parking citations.
+* The team will examine and plot citation locations to evaluate a possible correlation between parking citations and the surrounding area
     * Dining
     * Housing
     * Bar
     * Night club
  
-### Hypothesis Validation
+### Hypothesis Testing
 * Purpose One
    * Null hypothesis: there is no significant relationship between the make of cars and the number of citations. 
    * Alternate hypothesis: there is a significant relationship between the make of cars and the number of citations.
 * Purpose Two
-   * Null Hypotheses: there is no a significant relationship between color of the car and the number of parking citations.
+   * Null Hypotheses: there is no significant relationship between color of the car and the number of parking citations.
    * Alternate hypothesis: there is a significant relationship between color of the car and the number of parking citations. 
-* Since the chi-square value of 25599 at a confidance level of 95% exceeds the CV of 7.8114. We, therefore, conclude that there is a difference between the two groups is stastically significant. Also, the p-vale was zero indicates that the null phyptheses is false. We reject the null hypothesis.
+* The chi-square value of 25599 at a confidence level of 95% exceeds the CV of 7.8114. We, therefore, conclude that the difference between the two groups is stastically significant. Also, the p-value was zero indicates that the null phyptheses is false. We reject the null hypothesis.
 
 ### Key Documents
 
-The following data sets used throughout the project.
+The following data sets were used throughout the project.
 
 * a dataset was downloaded from the City of Los Angeles for the months of May through July 2018 in csv format.
 * Folium was used and various plug-ins were used to create interactive heat maps and location markers
@@ -56,7 +56,7 @@ The following data sets used throughout the project.
 
 ### Coding Style
 
-Jupyter notebooks will be used. 
+Jupyter notebooks was used. 
 
 List of dependencies:
 ```sh

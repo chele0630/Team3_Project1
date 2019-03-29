@@ -14,7 +14,7 @@
 
 # Team 3 Project 1
 
-Team 3 project is done to uncover patterns in parking activity around the Los Angeles area. We will examine realtionships between vehicle makes and parking citations, and vehicle color and parking citations.
+Team 3 picked a project to uncover patterns in parking activity around the city of Los Angeles. The first purpose was to examine a relationship between the makes of vehicles and number of parking citations. The second purpose was to examine a relationship between the colors of vehicles and parking citations.
 
 ### Purpose of the Analysis
 
@@ -42,6 +42,7 @@ We have two main purposes of the analysis:
 The following data sets were used throughout the project.
 
 * a dataset was downloaded from the City of Los Angeles for the months of May through July 2018 in csv format.
+* A dataset from the California DMV was separately analyzed to check for normalization
 * Folium was used and various plug-ins were used to create interactive heat maps and location markers
 
 ### Findings
@@ -66,18 +67,18 @@ List of dependencies:
    import requests
    import time
    import pprint
-   from citipy import citipy
-   import gmaps
-   import gmaps.datasets
    import scipy.stats as stats
    from datetime import datetime
    import folium
-   from folium.plugins import fast_marker_cluster as fmc
+   import folium.plugins as plugins
+   from folium.plugins import MarkerCluster
+   from folium.plugins import FastMarkerCluster
    import pyproj
+   import sys
 ```
 ### API Calls
 
-[City of Las Angels](https://data.lacity.org/resource/8yfh-4gug.json)
+[City of los Angeles](https://data.lacity.org/resource/8yfh-4gug.json)
 
 ### Coding Documentation
 [gmaps](https://jupyter-gmaps.readthedocs.io/en/latest/tutorial.html)

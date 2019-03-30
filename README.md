@@ -55,6 +55,13 @@ The following data sets were used throughout the project.
 
 [![INSERT YOUR GRAPHIC HERE](https://github.com/ButtonWalker/Team3_Project1/blob/master/CitaHeatMap.png)]()
 
+### Restaurants Location Clusters
+
+[![INSERT YOUR GRAPHIC HERE](https://github.com/ButtonWalker/Team3_Project1/blob/master/RestLocations.png)]()
+
+[![INSERT YOUR GRAPHIC HERE](https://github.com/ButtonWalker/Team3_Project1/blob/master/RestHeatMap.png)]()
+
+
 ### Coding Style
 
 Jupyter notebooks was used. 

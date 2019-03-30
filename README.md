@@ -5,7 +5,11 @@
 
 * [Team 3 Project 1](#team-3-project-1)
 * [Purpose of the Analysis](#purpose-of-the-analysis)
+* [Hypothesis Testing](#hypothesis-testing)
 * [Key Documents](#key-documents)
+* [Findings](#findings)
+* [Citation Location Clusters](#citation-location-cluster)
+* [Restaurant Location Clusters](#restaurant-location-cluster)
 * [Coding Style](#coding-style)
 * [API Calls](#api-calls)
 * [Coding Documentation](#coding-documentation)

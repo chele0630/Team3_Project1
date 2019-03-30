@@ -6,7 +6,7 @@
 #       extension: .py
 #       format_name: light
 #       format_version: '1.3'
-#       jupytext_version: 1.0.5
+#       jupytext_version: 1.0.4
 #   kernelspec:
 #     display_name: Python 3
 #     language: python
@@ -26,7 +26,12 @@ import gmaps
 import gmaps.datasets
 import scipy.stats as stats
 from datetime import datetime
-#import folium
+import folium
+import folium.plugins as plugins
+from folium.plugins import MarkerCluster
+from folium.plugins import FastMarkerCluster
+import pyproj
+import sys
 
 # ## Importing CSV Data
 #
@@ -241,3 +246,65 @@ dmv_df3["Make"]=dmv_df3["Make"].replace({'HONDA': 'HOND', 'CHEVROLET': 'CHEV', '
 
 #Check for makes in top 25 in both DMV and Citation 
 pd.merge(dmv_df3,citation_df7,how="inner")
+
+# Set Los Angeles base coordinates for center of city
+laCoords = 34.0522, -118.2437
+# Create base map of Los Angeles
+m = folium.Map(location= laCoords, zoom_start=10)
+# print map to verify working
+m
+
+# clean up the lat / Lon from x/y to lat / lon
+pm = '+proj=lcc +lat_1=34.03333333333333 +lat_2=35.46666666666667 +lat_0=33.5 +lon_0=-118 +x_0=2000000 +y_0=500000.0000000002 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs'
+x1m,y1m = citation_df2['Latitude'].values, citation_df2['Longitude'].values
+x2m,y2m = pyproj.transform(pyproj.Proj(pm,preserve_units = True), pyproj.Proj("+init=epsg:4326"), x1m,y1m)
+citation_df2['Latitude']=x2m
+citation_df2['Longitude']=y2m
+
+mc = MarkerCluster()
+# Set a sample of the over all dataframe
+subdf = citation_df2[(citation_df2['Longitude'].notnull())].loc[1:1000,:]
+subdf.head()
+#creating a Marker for each point in of a citation. Each point will get a popup with their zip
+for row in subdf.itertuples():
+    mc.add_child(folium.Marker(location=[row.Latitude,  row.Longitude])) 
+m.add_child(mc)
+# Reset the index and drop dups if any
+citation_df2.reset_index(inplace=True, drop=True)
+subdf = citation_df2[(citation_df2['Longitude'].notnull())].loc[1:10000,:]
+# Display the head of the dataframe
+subdf.head()
+
+# create empty map zoomed in on San Francisco
+someMap = folium.Map(location=laCoords, zoom_start=10) 
+# add a marker for every record in the filtered data, use a clustered view
+FastMarkerCluster(data=list(
+    zip(subdf['Longitude'],
+        subdf['Latitude']
+       ))).add_to(someMap)
+folium.LayerControl().add_to(someMap)
+someMap.save('citaClustermap.html')
+# display the map
+display(someMap)
+
+# sys.setrecursionlimit(150000)
+data_heat = subdf[['Longitude', 'Latitude']].values.tolist()
+# sys.setrecursionlimit(1500)
+someMapHeat = folium.Map(location=laCoords, zoom_start=10) 
+plugins.HeatMap(data_heat).add_to(someMapHeat)
+# save the map as a html
+someMapHeat.save('heatmap.html')
+# display the map
+someMapHeat
+
+# Creat Locations of Resturants as overlay of map
+laRestLoc = pd.read_csv('ResturantData.csv')
+restDF = laRestLoc[(laRestLoc['Lat'].notnull())].loc[1:100,:]
+restDF.head()
+
+#creating a Marker for each point in of a citation. Each point will get a popup with their zip
+for row in restDF.itertuples():
+    mc.add_child(folium.Marker(location=[row.Lat,  row.Long], icon=folium.Icon(color='red'))) 
+m.add_child(mc)
+
+

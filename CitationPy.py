@@ -92,18 +92,38 @@ citation_df7 = citation_df6.head(25)
 
 citation_df7.head()
 
+# bar_order = citation_df7.sort_values("counts")
+
+
+# +
 #Bar plot for top 25 make of vehicles that got citations
 fig = plt.gcf()
-fig.set_size_inches(18.5, 10.5)
-x_axis=np.arange(len(citation_df7["Make"]))
-plt.bar(x_axis,citation_df7["counts"], color="blue" )
-plt.xlabel('Make', fontsize=18)
-plt.ylabel('Counts', fontsize=18)
-plt.xticks(x_axis, citation_df7["Make"], fontsize=12, rotation=90,)
-plt.title('Top 25 Citations by Make of Cars', fontsize=25)
+fig.set_size_inches(9.5, 10.5)
+y_axis=np.arange(len(citation_df7["Make"]))
+citation_df7.sort_values('counts',inplace=True)
+plt.barh(y_axis,citation_df7["counts"], color="darkcyan", align="center",
+         edgecolor="none",)
+
+#Set labels
+plt.ylabel('Make', fontsize=12, labelpad=15, weight="bold")
+plt.xlabel('Counts', fontsize=12, labelpad=5, weight="bold")
+
+#Edit ticks
+plt.tick_params(axis="both", which="both", bottom="False", top="False", labelbottom="False", left="False", right="False", labelleft="True")
+plt.yticks(y_axis, citation_df7["Make"], fontsize=9, rotation=360,)
+plt.xticks(fontsize=10)
+
+# get rid of the frame
+for spine in plt.gca().spines.values():
+    spine.set_visible(False)
+
+
+plt.title('Top 25 Citations by Make of Cars ', fontsize=15)
 fig.savefig("make_chart.png")
 plt.show()
 plt.clf()
+plt.show()
+# -
 
 #Replace duplicates for all makes in top 30
 citation_df8 = citation_df4["Color"].value_counts()
@@ -111,19 +131,30 @@ citation_df9 = citation_df8.rename_axis('Color').reset_index(name='Counts')
 citation_df10 = citation_df9.head(10)
 
 
+# +
 #Bar plot for top 25 Color of vehicles that got citations
 fig = plt.gcf()
-fig.set_size_inches(18.5, 10.5)
+fig.set_size_inches(15.5, 5.5)
 x_axis=np.arange(len(citation_df10["Color"]))
-plt.bar(x_axis,citation_df10["Counts"], color=('wheat','black',"grey","silver","blue","red","green","brown","maroon","gold","red","tan"))
-plt.xlabel('Color', fontsize=18)
-plt.ylabel('Counts', fontsize=18)
-plt.xticks(x_axis, citation_df10["Color"], fontsize=18, rotation=30)
-plt.title('Top 10 Citations by Color of Cars', fontsize=20)
+plt.bar(x_axis,citation_df10["Counts"], color=('whitesmoke','black',"grey","silver","royalblue","red","green","rosybrown","maroon","gold","red","tan"))
+
+#Set labels
+plt.xlabel('Color', fontsize=18, labelpad=5, weight="bold")
+plt.ylabel('Counts', fontsize=18, labelpad=5, weight="bold")
+
+#Edit ticks
+plt.xticks(x_axis, citation_df10["Color"], fontsize=12, rotation="horizontal")
+plt.title('Top 10 Citations by Color of Cars', fontsize=18)
+
 #plt.figure(figsize=(18,16))
+plt.grid( which="major",linestyle="dotted", color="lemonchiffon")
+plt.rcParams['axes.facecolor'] = 'burlywood'
 fig.savefig("color_chart.png")
+
 plt.show()
 plt.clf()
+
+# -
 
 plt.clf()
 
@@ -165,11 +196,48 @@ Expected
 Combined =  pd.concat([Observed, Expected], axis = 1)
 Combined
 
-#With fur raws, the degree of freedom is 3
+#With four raws, the degree of freedom is 3
 # with a p-value of 0.05, the CL is 1-0.05 = 0.95
 Critcal_value = stats.chi2.ppf(q=0.95, df = 3)
 Critcal_value
 
 stats.chisquare(Combined["Observed"], Combined["Expected"])
 
+# # DMV Data
+#
+#
 
+#Import citation data from csv
+dmv_raw = pd.read_csv("VehicleCount_070118.csv")
+dmv_df = dmv_raw
+
+
+# +
+#Take needed columns only
+dmv_df1=dmv_df[["Make", "Vehicles"]]
+
+#Get total number of vehicles for each make
+dmv_df2=dmv_df1.groupby(["Make"]).sum()
+
+#Sort for top 25
+dmv_df2 = dmv_df2.sort_values(["Vehicles"], ascending=False)
+
+#Get top 25
+dmv_df3 = dmv_df2.head(25).reset_index()
+dmv_df3
+
+
+# -
+
+#Rename makes to tie DMV data to citation data
+dmv_df3["Make"]=dmv_df3["Make"].replace({'HONDA': 'HOND', 'CHEVROLET': 'CHEV', 'NISSAN': 'NISS','DODGE': 'DODG',
+                                 'MERCEDES-BENZ': 'MERZ','LEXUS': 'LEXS','MAZDA': 'MAZD','HYUNDAI': 'HYUN',
+                                'SUBARU': 'SUBA','ACURA': 'ACUR','INFINITI': 'INFI',
+                                'OTHER/UNK': 'OTHR','VOLVO': 'VOLV','MITSUBISHI': 'MITS',
+                                'CHRYSLER': 'CHRY',
+                                'VOLKSWAGEN': 'VOLK',
+                                })
+#dmv_df3
+
+#Check for makes in top 25 in both DMV and Citation 
+pd.merge(dmv_df3,citation_df7,how="inner")

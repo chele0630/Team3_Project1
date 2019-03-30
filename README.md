@@ -23,10 +23,7 @@ We have two main purposes of the analysis:
 * The first purpose is to examine if a relationship exists between vehicle make and parking citations.
 * The second purpose is to examine if a relationship exists between vehicle color andd parking citations.
 * The team will examine and plot citation locations to evaluate a possible correlation between parking citations and the surrounding area
-    * Dining
-    * Housing
-    * Bar
-    * Night club
+    * Restaurant
  
 ### Hypothesis Testing
 * Purpose One

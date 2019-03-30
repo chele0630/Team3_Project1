@@ -113,6 +113,8 @@ Name Bugs (BugKW01) feature number and bug number to match
 Giving credit to those who helped
 ```sh
 Hat tip to anyone whose code was used
+* Medium
 Inspiration
+* Kaggle
 etc
 ```

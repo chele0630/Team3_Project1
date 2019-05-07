@@ -65,7 +65,7 @@ The following data sets were used throughout the project.
 
 ### Coding Style
 
-Jupyter notebooks was used. 
+Jupyter notebooks was used to extract and transform data. 
 
 List of dependencies:
 ```sh
@@ -82,6 +82,8 @@ List of dependencies:
    import pyproj
    import sys
 ```
+MySQL was used to load data.
+
 ### API Calls
 
 [City of los Angeles](https://data.lacity.org/resource/8yfh-4gug.json)
